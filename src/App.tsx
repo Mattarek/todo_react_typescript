@@ -6,10 +6,11 @@ function App() {
     return (
         <main className='py-10 h-screen'>
             <h1 className='font-bold text-center text-3x1'>Your todos</h1>
-            <div className='max-w-lg mx-auto'>
+            <div className='max-w-lg mx-auto bg-slate-100 p-5'>
                 <div className='space-y-2'>
-                    {dummyData.map(({ title }, index) => (
+                    {dummyData.map(({ title, completed }, index) => (
                         <TodoItem
+                            completed={completed}
                             title={title}
                             key={index}
                         />
