@@ -1,5 +1,6 @@
 export interface TodoItemProps {
-    id?: number;
+    id: number;
     title: string;
-    completed?: boolean;
+    completed: boolean;
+    onCompletedChange?: (id: number, completed: boolean) => void;
 }
