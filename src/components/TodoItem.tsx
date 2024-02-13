@@ -2,10 +2,12 @@ import { TodoItemProps } from '../types/todo';
 
 interface TodoItemFunctionProps {
     todo: TodoItemProps;
+    onCompletedChange?: (id: number, completed: boolean) => void;
 }
 
 export const TodoItem = ({
-    todo: { completed, onCompletedChange, id },
+    todo: { title, completed, id },
+    onCompletedChange,
 }: TodoItemFunctionProps) => {
     return (
         <div>
@@ -19,6 +21,7 @@ export const TodoItem = ({
                         onCompletedChange(id, e.target.checked)
                     }
                 />
+                {title}
                 <span
                     className={
                         completed ? 'line-through text-gray-400' : ''
