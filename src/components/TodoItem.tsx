@@ -14,7 +14,7 @@ export const TodoItem = ({
 }: TodoItemFunctionProps) => {
     return (
         <div className='flex items-center gap-1'>
-            <label className='flex items-center gap-2 border rounded-md p-2 border-grey-700 bg-white hover:bg-slate-50'>
+            <label className='flex items-center gap-2 border rounded-md p-2 border-grey-700 bg-white hover:bg-slate-50 grow'>
                 <input
                     type='checkbox'
                     checked={completed}

@@ -20,15 +20,22 @@ export const TodoList = ({
     });
 
     return (
-        <div className='space-y-2'>
-            {todosSorted.map((todo) => (
-                <TodoItem
-                    todo={todo}
-                    key={todo.id}
-                    onCompletedChange={onCompletedChange}
-                    onDelete={onDelete}
-                />
-            ))}
-        </div>
+        <>
+            <div className='space-y-2'>
+                {todosSorted.map((todo) => (
+                    <TodoItem
+                        todo={todo}
+                        key={todo.id}
+                        onCompletedChange={onCompletedChange}
+                        onDelete={onDelete}
+                    />
+                ))}
+            </div>
+            {todos.length === 0 && (
+                <p className='text-center text-sm text-green-500'>
+                    No Todos yet. Add a new one above.
+                </p>
+            )}
+        </>
     );
 };
