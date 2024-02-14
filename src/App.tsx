@@ -1,11 +1,17 @@
 import './App.css';
+import { useState } from 'react';
 import { TodoItem } from './components/TodoItem';
 import { dummyData } from './data/todos';
 
 function App() {
-    const setTodoCompleted = (id: number, completed: boolean) => {
-        alert(`Todo with id ${id} is ${completed}`);
-    };
+    const [todos, setTodos] = useState(dummyData);
+
+    const setTodoCompleted = (id: number, completed: boolean) =>
+        setTodos((prevState) =>
+            prevState.map((todo) =>
+                todo.id === id ? { ...todo, completed } : todo,
+            ),
+        );
 
     return (
         <main className='py-10 h-screen'>
