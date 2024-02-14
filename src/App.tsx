@@ -1,6 +1,5 @@
 import './App.css';
 import { useState } from 'react';
-import { TodoItem } from './components/TodoItem';
 import { dummyData } from './data/todos';
 import { AddTodoForm } from './components/AddTodoForm';
 import { TodoList } from './components/TodoList';
@@ -22,6 +21,10 @@ function App() {
         ]);
     };
 
+    const deleteTodo = (id: number) => {
+        setTodos((prevState) => prevState.filter((todo) => todo.id !== id));
+    };
+
     return (
         <main className='py-10 h-screen space-y-5'>
             <h1 className='font-bold text-center text-3x1'>Your todos</h1>
@@ -31,14 +34,8 @@ function App() {
                     <TodoList
                         todos={todos}
                         onCompletedChange={setTodoCompleted}
+                        onDelete={deleteTodo}
                     />
-                    {/* {todos.map((todo) => (
-                        <TodoItem
-                            todo={todo}
-                            key={todo.id}
-                            onCompletedChange={setTodoCompleted}
-                        />
-                    ))} */}
                 </div>
             </div>
         </main>

@@ -1,6 +1,4 @@
-import { useState } from 'react';
 import { TodoItem } from './TodoItem';
-import { dummyData } from '../data/todos';
 import { TodoItemProps } from '../types/todo';
 
 interface TodoListProps {
