@@ -2,7 +2,7 @@ import { TodoItemProps } from '../types/todo';
 
 interface TodoItemFunctionProps {
     todo: TodoItemProps;
-    onCompletedChange?: (id: number, completed: boolean) => void;
+    onCompletedChange: (id: number, completed: boolean) => void;
 }
 
 export const TodoItem = ({
@@ -16,10 +16,7 @@ export const TodoItem = ({
                     type='checkbox'
                     checked={completed}
                     className='scale-125'
-                    onChange={(e) =>
-                        onCompletedChange &&
-                        onCompletedChange(id, e.target.checked)
-                    }
+                    onChange={(e) => onCompletedChange(id, e.target.checked)}
                 />
                 {title}
                 <span
